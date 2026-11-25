@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StoryboardSchema",
+  "description": "Validation schema for AI-generated film storyboard contract",
+  "type": "object",
+  "required": [
+    "title",
+    "logline",
+    "total_duration_seconds",
+    "language",
+    "aspect_ratios",
+    "characters",
+    "music_cues",
+    "shots"
+  ],
+  "properties": {
+    "title": { "type": "string" },
+    "logline": { "type": "string" },
+    "total_duration_seconds": { "type": "number", "minimum": 60, "maximum": 90 },
+    "language": { "type": "string" },
+    "aspect_ratios": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["9:16", "16:9"] },
+      "minItems": 2
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description", "style_prompt"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "style_prompt": { "type": "string" }
+        }
+      }
+    },
+    "music_cues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cue_id", "start_time_seconds", "caption", "tempo_bpm", "mood"],
+        "properties": {
+          "cue_id": { "type": "string" },
+          "start_time_seconds": { "type": "number" },
+          "caption": { "type": "string" },
+          "tempo_bpm": { "type": "integer" },
+          "mood": { "type": "string" }
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "required": [
+          "shot_number",
+          "title",
+          "duration_seconds",
+          "camera_angle",
+          "camera_movement",
+          "image_prompt",
+          "motion_prompt",
+          "narration",
+          "subtitles_en"
+        ],
+        "properties": {
+          "shot_number": { "type": "integer", "minimum": 1 },
+          "title": { "type": "string" },
+          "duration_seconds": { "type": "number", "minimum": 3.0, "maximum": 15.0 },
+          "camera_angle": {
+            "type": "string",
+            "enum": [
+              "wide_shot",
+              "medium_shot",
+              "close_up",
+              "extreme_close_up",
+              "over_the_shoulder",
+              "establishing_shot"
+            ]
+          },
+          "camera_movement": {
+            "type": "string",
+            "enum": ["static", "pan", "tilt", "slow_push_in", "slow_pull_out", "tracking"]
+          },
+          "character_ref_id": { "type": ["string", "null"] },
+          "image_prompt": { "type": "string" },
+          "motion_prompt": { "type": "string" },
+          "narration": {
+            "type": "object",
+            "required": ["text", "voice_style"],
+            "properties": {
+              "text": { "type": "string" },
+              "voice_style": { "type": "string" }
+            }
+          },
+          "subtitles_en": { "type": "string" },
+          "reason_for_shot": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "title": "The Frequency of Memory (የማስታወሻ ሞገድ)",
+  "logline": "An elder radio technician in his modest Addis Ababa workshop brings a silent family heirloom back to life, tuning past decades of static to reconnect with the song of his youth.",
+  "total_duration_seconds": 72.0,
+  "language": "Amharic",
+  "aspect_ratios": ["9:16", "16:9"],
+  "characters": [
+    {
+      "id": "char_berhanu",
+      "name": "Ato Berhanu",
+      "description": "65-year-old Ethiopian radio technician, thoughtful eyes behind round wire-rimmed spectacles, salt-and-pepper hair and short beard, wearing a weathered wool brown cardigan over a collared shirt. Patient, artisan demeanor.",
+      "style_prompt": "Warm cinematic documentary look, 35mm film grain, gentle amber light, authentic 1980s Addis Ababa workshop aesthetic, realistic skin texture, shallow depth of field."
+    }
+  ],
+  "music_cues": [
+    {
+      "cue_id": "cue_nostalgia",
+      "start_time_seconds": 0.0,
+      "caption": "Gentle Ethiopian acoustic krar and masenqo meditation, soft atmospheric drone, warm tape saturation, nostalgic, unhurried, no percussion, instrumental only",
+      "tempo_bpm": 68,
+      "mood": "contemplative, nostalgic"
+    },
+    {
+      "cue_id": "cue_resolution",
+      "start_time_seconds": 48.0,
+      "caption": "Warm resolving Tizita scale melody, acoustic acoustic krar with subtle upright bass, hopeful and comforting, instrumental only",
+      "tempo_bpm": 72,
+      "mood": "warm, resolving, uplifting"
+    }
+  ],
+  "shots": [
+    {
+      "shot_number": 1,
+      "title": "The Slanted Morning Light",
+      "duration_seconds": 8.0,
+      "camera_angle": "establishing_shot",
+      "camera_movement": "slow_push_in",
+      "character_ref_id": null,
+      "image_prompt": "An authentic, cluttered vintage radio repair workshop in old Addis Ababa, morning sunlight streaming through wooden slatted shutters onto dusty wooden workbenches filled with vacuum tubes, copper wire coils, soldering irons, and stacked wooden radios from the 1970s. Cinematic lighting, soft dust motes in the air, 35mm photograph, ultra-realistic.",
+      "motion_prompt": "Slow gentle push-in through dust particles floating in golden sunbeams, calm morning stillness.",
+      "narration": {
+        "text": "አባቴ ይል ነበር፦ ዝምታ ማለት የድምፅ እጦት አይደለም። ትክክለኛውን ሞገድ አለማግኘት እንጂ።",
+        "voice_style": "Calm, warm, reflective, unhurried"
+      },
+      "subtitles_en": "My father used to say: silence is not the absence of sound, but simply waiting for the right frequency.",
+      "reason_for_shot": "Establishes the contemplative mood and the sanctum of the workshop, introducing the central philosophy of listening."
+    },
+    {
+      "shot_number": 2,
+      "title": "Ato Berhanu at the Bench",
+      "duration_seconds": 8.0,
+      "camera_angle": "medium_shot",
+      "camera_movement": "static",
+      "character_ref_id": "char_berhanu",
+      "image_prompt": "Ato Berhanu, a 65-year-old Ethiopian artisan with wire-rimmed glasses and weathered hands, wearing a worn brown cardigan, leaning over an open wooden tube radio on his workbench. Warm amber lamp overhead, vintage tools resting on table, genuine thoughtful expression. Cinematic 35mm film still.",
+      "motion_prompt": "Subtle breathing, eyes carefully inspecting the radio chassis, soft warm workshop lighting.",
+      "narration": {
+        "text": "ለአርባ ዓመታት በዚህች ጠባብ ክፍል ውስጥ፣ የተበላሹ ራዲዮኖችን ብቻ አልነበረም የጠገነው።",
+        "voice_style": "Reflective, steady, nostalgic"
+      },
+      "subtitles_en": "For forty years in this small room, he repaired more than just broken radios.",
+      "reason_for_shot": "Introduces the protagonist and grounds his dedication over four decades of service to his community."
+    },
+    {
+      "shot_number": 3,
+      "title": "The Delicate Wire",
+      "duration_seconds": 8.0,
+      "camera_angle": "close_up",
+      "camera_movement": "slow_push_in",
+      "character_ref_id": null,
+      "image_prompt": "Extreme macro close-up of aged hands using slender copper pliers to solder a glowing miniature glass vacuum tube inside an intricate radio circuit. Soft puff of solder smoke rising, glowing orange filament inside the tube, warm macro photography.",
+      "motion_prompt": "Gentle steady movement of soldering iron, thin thread of grey smoke drifting upward in warm light.",
+      "narration": {
+        "text": "የሰፈር ሰዎችን ተስፋ፣ ናፍቆት እና የሩቅ ዓለም ዜናዎችን ነበር የሚቀጥለው።",
+        "voice_style": "Warm, emotional emphasis"
+      },
+      "subtitles_en": "He reconnected the hopes, longings, and distant news of an entire neighborhood.",
+      "reason_for_shot": "Emphasizes the meticulous physical craft and connects the miniature electronics to human emotional connection."
+    },
+    {
+      "shot_number": 4,
+      "title": "The Silent Heirloom",
+      "duration_seconds": 8.0,
+      "camera_angle": "medium_shot",
+      "camera_movement": "static",
+      "character_ref_id": "char_berhanu",
+      "image_prompt": "Ato Berhanu looking down tenderly at a heavily scuffed 1970s wooden Philips table radio, his fingertips lightly tracing the yellowed frequency dial. Side lighting from window, nostalgic atmosphere, quiet devotion.",
+      "motion_prompt": "Hand slowly resting on the volume knob, pausing in silent anticipation.",
+      "narration": {
+        "text": "ይህች ራዲዮ የቤታችን ቅርስ ነበረች። ከእናቴ ሞት ወዲህ አንዲት ቃል አውርታ አታውቅም ነበር።",
+        "voice_style": "Gentle, sorrowful, intimate"
+      },
+      "subtitles_en": "This radio was our family heirloom. Since my mother passed, it had not spoken a single word.",
+      "reason_for_shot": "The narrative inciting beat: reveals the personal stake—it is not a customer's radio, but a cherished family heirloom."
+    },
+    {
+      "shot_number": 5,
+      "title": "The Turning of the Dial",
+      "duration_seconds": 8.0,
+      "camera_angle": "extreme_close_up",
+      "camera_movement": "slow_pull_out",
+      "character_ref_id": null,
+      "image_prompt": "Close-up on the vintage radio analog tuning dial with Amharic and international shortwave numbers, needle slowly moving across MHz markers. Warm backlight through the glass panel, macro lens with gentle bokeh.",
+      "motion_prompt": "Tuning needle slowly creeping to the right through the illuminated dial, subtle camera drift.",
+      "narration": {
+        "text": "አባቴ ግን አልተጠራጠረም። ጣቶቹ በማስተካከያው ላይ በዝግታ ይሽከረከራሉ...",
+        "voice_style": "Suspenseful, focused, reverent"
+      },
+      "subtitles_en": "Yet he never doubted. His fingers slowly turned through the frequencies...",
+      "reason_for_shot": "Builds tension and sensory anticipation as the search for sound begins."
+    },
+    {
+      "shot_number": 6,
+      "title": "Through the Static",
+      "duration_seconds": 8.0,
+      "camera_angle": "close_up",
+      "camera_movement": "static",
+      "character_ref_id": "char_berhanu",
+      "image_prompt": "Close-up of Ato Berhanu's face in profile, tilting his ear toward the speaker cloth, brows furrowed in intense concentration, golden hour sunlight highlighting his temple and spectacles.",
+      "motion_prompt": "Subtle head tilt closer to speaker grill, eyes narrowing with concentrated listening.",
+      "narration": {
+        "text": "በጩኸትና በጭረት መካከል፣ እውነተኛው ድምፅ እስኪገኝ ድረስ።",
+        "voice_style": "Quiet, building tension"
+      },
+      "subtitles_en": "Searching through the hiss and crackle until the true voice was found.",
+      "reason_for_shot": "Visualizes the act of listening and perseverance against noise."
+    },
+    {
+      "shot_number": 7,
+      "title": "The Frequency Found",
+      "duration_seconds": 8.0,
+      "camera_angle": "medium_shot",
+      "camera_movement": "slow_push_in",
+      "character_ref_id": "char_berhanu",
+      "image_prompt": "A sudden soft amber glow from the vacuum tubes behind the radio grill; Ato Berhanu's face softens into a tender, tearful smile of profound relief and joy. Warm cinematic backlighting, emotional release.",
+      "motion_prompt": "A warm smile slowly breaking across his weathered face, shoulders relaxing.",
+      "narration": {
+        "text": "እናም ድንገት... የጥንቱ የትዝታ ዜማ ቤቱን ሞላው።",
+        "voice_style": "Warm, joyful, tender"
+      },
+      "subtitles_en": "And then, suddenly... the ancient melody of Tizita filled the room.",
+      "reason_for_shot": "The emotional climax: the radio awakens, bringing the sound of memory back into the space."
+    },
+    {
+      "shot_number": 8,
+      "title": "Echoes in the Street",
+      "duration_seconds": 8.0,
+      "camera_angle": "wide_shot",
+      "camera_movement": "pan",
+      "character_ref_id": null,
+      "image_prompt": "View looking out from the workshop doorway into a golden afternoon Addis Ababa street, children passing by, neighbors glancing toward the shop as the gentle melody drifts out into the dusk air. Atmospheric depth, cinematic.",
+      "motion_prompt": "Slow gentle pan across the shop threshold towards the bustling street bathed in evening amber light.",
+      "narration": {
+        "text": "አንዳንድ ጊዜ የምንጠግነው እቃውን ሳይሆን፣ አብሮን የነበረውን ትዝታ ነው።",
+        "voice_style": "Deep, philosophical, peaceful"
+      },
+      "subtitles_en": "Sometimes what we repair is not merely an object, but the memory we shared.",
+      "reason_for_shot": "Expands the personal memory outward into the world, cementing the thematic meaning."
+    },
+    {
+      "shot_number": 9,
+      "title": "The Lingering Glow",
+      "duration_seconds": 8.0,
+      "camera_angle": "medium_shot",
+      "camera_movement": "slow_pull_out",
+      "character_ref_id": "char_berhanu",
+      "image_prompt": "Ato Berhanu sitting peacefully on his wooden stool, eyes closed, sipping tea from a small glass cup, the illuminated radio glowing softly beside him in the twilight. Peaceful closing composition, deep warm shadows.",
+      "motion_prompt": "Slow steady pull out as twilight settles in the shop, leaving the warm radio glowing.",
+      "narration": {
+        "text": "የማስታወሻ ሞገድ መቼም አይጠፋም።",
+        "voice_style": "Soft, reverent whisper, final resolve"
+      },
+      "subtitles_en": "The frequency of memory never fades.",
+      "reason_for_shot": "The final resolution: peaceful closure, leaving the viewer with warmth and lasting reverence."
+    }
+  ]
+}
