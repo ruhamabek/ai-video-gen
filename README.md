@@ -5,7 +5,7 @@
 
 ---
 
-## 🎬 Project Overview
+## Project Overview
 *The Frequency of Memory* is an automated 72-second heritage short film produced entirely through a programmatic multi-model pipeline. It tells the story of **Ato Berhanu**, an elder artisan in Addis Ababa who restores vintage tube radios, tuning past static to find the warm frequency of family memory (*Tizita*).
 
 Built for the **10 Academy AI-Content Generation Challenge ("The Heritage Short")**.
@@ -17,7 +17,7 @@ Built for the **10 Academy AI-Content Generation Challenge ("The Heritage Short"
 
 ---
 
-## 🚀 One-Command Execution
+## One-Command Execution
 
 To reproduce the entire film from scratch:
 
@@ -41,7 +41,7 @@ Each shot is cached by the SHA-256 hash of its inputs. If you modify a single sh
 
 ---
 
-## 🏗️ Architecture & Zero-Cost Stack
+## Architecture & Zero-Cost Stack
 
 The pipeline is structured around **`storyboard.json`** as the single strict contract, validated against `schema/storyboard.schema.json` before every stage:
 
