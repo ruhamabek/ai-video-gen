@@ -47,3 +47,21 @@ This document records real blockers encountered across API quotas, dependencies,
   1. Initial fallback dropped to local `espeak-ng`, which produced an audible but jarring robotic synthesizer voice that broke immersion between seconds 0:39–0:50 and 0:56–1:00.
   2. Implemented a seamless high-fidelity neural Amharic voice fallback (`tl=am`) with audio normalization and precise shot-duration padding (`apad` and `atrim`).
 - **What Fixed It**: Shots 06, 07, and 09 now speak in natural, human-articulated Amharic, matching the vocal tone and cadence of the earlier Gemini TTS scenes with zero robotic artifacts.
+
+---
+
+### Failure 06: Missing `drawtext` Filter in Portable Static FFmpeg Binary
+- **Issue**: When running `make film`, Stage: Assemble crashed with `exit status 8` at `create_end_card()`: `No such filter: 'drawtext'`. The custom static FFmpeg build provided `libx264` and `subtitles` (libass), but was compiled without the optional `drawtext` filter.
+- **What Was Tried**:
+  1. Tried invoking system `/usr/bin/ffmpeg` for the end card (system build lacked `libx264` and caused codec mismatches).
+  2. Tried using an FFmpeg complex filter chaining color source and drawtext.
+- **What Fixed It**: Completely decoupled the end card text rasterization from FFmpeg's font dependencies by rendering the 1280x720 disclosure card (`"Made with Artificial Intelligence"`) in Python using **Pillow (`PIL.ImageDraw`)** to `outputs/end_card_frame.png`. FFmpeg then loops the generated still frame for 2.5 seconds (`ffmpeg -loop 1 -i ... -t 2.5`). This is 100% portable across any OS or minimal FFmpeg build without external font libraries.
+
+---
+
+### Failure 07: Audio Filtergraph Stream Specifier Reuse in Sidechain Ducking
+- **Issue**: Audio ducking failed with exit status 234: `Stream specifier 'narr' matches no streams` / `Invalid argument`.
+- **What Was Tried**:
+  1. Chained `[0:a]volume=1.2[narr]` directly into both `[bg][narr]sidechaincompress` and subsequent `[ducked_bg][narr]amix`.
+- **What Fixed It**: In FFmpeg filtergraphs, intermediate stream pads are strictly consumed on first use and cannot be referenced twice. Used `asplit=2` (`[0:a]volume=1.2,asplit=2[narr1][narr2]`), feeding `[narr1]` as the compression sidechain control trigger and `[narr2]` into `amix` to produce the final ducked master audio.
+

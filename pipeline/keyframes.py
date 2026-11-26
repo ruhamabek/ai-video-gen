@@ -11,7 +11,7 @@ import urllib.request
 import urllib.parse
 from pathlib import Path
 
-from pipeline.common import load_storyboard, compute_hash, log_run, OUTPUTS_DIR, PROJECT_ROOT
+from pipeline.common import load_storyboard, compute_hash, log_run, OUTPUTS_DIR
 
 KEYFRAMES_DIR = OUTPUTS_DIR / "keyframes"
 CHARACTERS_DIR = OUTPUTS_DIR / "characters"

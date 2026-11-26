@@ -47,7 +47,7 @@ docker-build:
 	docker build -t $(DOCKER_IMAGE) .
 
 docker-film: docker-build
-	docker run --rm -v $(PWD)/outputs:/app/outputs --env-file .env $(DOCKER_IMAGE)
+	docker run --rm -v $(CURDIR)/outputs:/app/outputs $(shell test -f .env && echo "--env-file .env") $(DOCKER_IMAGE)
 
 clean:
 	rm -rf outputs/concat_list.txt outputs/narration_concat.txt outputs/stitched_raw.mp4 outputs/video_with_endcard.mp4 outputs/end_card.mp4

@@ -13,7 +13,7 @@ import urllib.parse
 import subprocess
 from pathlib import Path
 
-from pipeline.common import load_storyboard, compute_hash, log_run, OUTPUTS_DIR, PROJECT_ROOT
+from pipeline.common import load_storyboard, compute_hash, log_run, OUTPUTS_DIR 
 
 AUDIO_DIR = OUTPUTS_DIR / "audio"
 AUDIO_DIR.mkdir(parents=True, exist_ok=True)
