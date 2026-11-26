@@ -124,17 +124,42 @@ To raise the ceiling beyond the baseline challenge floor, we conducted systemati
 - **Google Neural Amharic (tl=am)**: Unlimited free tier access, native Amharic phoneme accuracy, sub-1.2s latency. With our clause-segmentation patch, it achieved a 100% completion rate with zero dropped words.
 - **Exploratory Language Test**: Tested Shot 01 in **Afaan Oromo** (*"Abbaan koo akkana jedha ture: Cal-jechuun sagalee dhabuu miti..."*). Found that while phoneme pronunciation is clear, speech cadence is ~15% faster, requiring dynamic duration stretching in the storyboard.
 
+#### Benchmark 3: Zero-Dependency Dockerization & Cross-Platform Assembly
+- **The Challenge**: Minimal container environments and static FFmpeg builds frequently lack complex filter libraries (e.g., missing `drawtext` or fontconfig locks) or suffer from intermediate audio pad re-use crashes in complex filtergraphs.
+- **The Solution**: 
+  1. We containerized the complete stack (`Dockerfile`, `make docker-film`) based on `python:3.11-slim` with system FFmpeg, `libx264`, and Amharic Unicode fonts.
+  2. In `pipeline/assemble.py`, we decoupled text generation by rasterizing disclosure screens using **Pillow (`PIL.ImageDraw`)** before feeding into FFmpeg, and introduced `asplit=2` in the ducking graph. This eliminated all host-binary filter mismatches, rendering identically across bare metal Fedora/Debian and isolated containers in under 95 seconds.
+
 ---
 
-## 4. Deliverables Checklist
+## 4. Audience Feedback Loops & Design Iterations
+
+Following human-centered design principles, two structured critique sessions directly shaped the final masters:
+
+### Test 1: The Pre-Production Audio Animatic (Radio Cut)
+*Conducted with an audio-only cut prior to expensive visual generation:*
+1. **Pacing & Emotional Weight (Shot 4)**: Testers noted the narration initially rushed past Ato Berhanu's late wife (*"Since my mother passed, it had not spoken a single word"*). We split Shot 4 into two distinct clauses with a contemplative breath pause.
+2. **Score Authenticity**: Testers felt synthetic drone music lacked cultural resonance. We integrated authentic Ethiopian *Tizita* modal melodies featuring traditional *Krar* and *Masenqo* timbres.
+3. **Bilingual Storyboard Accessibility**: English subtitles (`subtitles_en`) were enhanced for diaspora viewers to communicate poetic nuance alongside spoken Amharic.
+
+### Test 2: Post-Assembly Visual Master Cut
+*Conducted on the complete 24fps motion cut with ducked score and burned subtitles:*
+1. **Vertical Safe Zones (9:16 Reels/TikTok)**: Subtitles initially scaled to wide format, producing an 8-line text wall that blocked Ato Berhanu's face. We repositioned them strictly into the lower third (`Alignment=2`, `FontSize=8.5`, `MarginV=60`), clearing mobile UI overlays.
+2. **Dynamic Range & Ducking Calibration**: Early ducking suppressed music permanently below -43 dB. We recalibrated `sidechaincompress` and volume ratios (`weights='0.4 1.3'`), allowing the nostalgic *Tizita* melody to swell during dramatic pauses.
+
+---
+
+## 5. Deliverables Checklist
 
 - [x] `storyboard.json` (72.5s duration, 9 shots, validated JSON schema)
 - [x] `schema/storyboard.schema.json`
-- [x] Reproducible pipeline scripts in `pipeline/`
-- [x] Append-only audit log in `runs.jsonl`
-- [x] Documentation: `DESIGN.md`, `ARCHITECTURE.md`, `EXPERIMENTS.md`, `FAILURES.md`, `COSTS.md`, `ETHICS.md`
+- [x] Reproducible pipeline scripts in `pipeline/` (`script.py`, `narration.py`, `keyframes.py`, `shots.py`, `music.py`, `assemble.py`, `orchestrate.py`)
+- [x] Append-only audit log in `runs.jsonl` (timestamps, seeds, latencies, model parameters)
+- [x] Containerization: `Dockerfile` & `Makefile` (`make film`, `make docker-film`, `make radio-cut`)
+- [x] Documentation Suite: `README.md`, `DESIGN.md`, `ARCHITECTURE.md`, `EXPERIMENTS.md`, `FAILURES.md`, `COSTS.md`, `ETHICS.md`
 - [x] Master Video Deliverables:
   - `outputs/final_heritage_short_16x9.mp4` (Horizontal Cinematic Master, hardcoded subtitles)
   - `outputs/final_heritage_short_9x16.mp4` (Vertical Reels/TikTok Master, hardcoded subtitles)
   - `outputs/subtitles.srt` (English subtitles)
 - [x] Executive Report: `REPORT.md`
+
