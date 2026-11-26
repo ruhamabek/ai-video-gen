@@ -4,6 +4,7 @@
 > *"Over forty years in this small room, he repaired more than just broken radios. He reconnected the hopes, longings, and distant news of an entire neighborhood."*
 
 [![Pipeline Status](https://img.shields.io/badge/Pipeline-Verified%20Passing-brightgreen.svg)]()
+[![Video Walkthrough](https://img.shields.io/badge/Video-Walkthrough-1AB7EA?logo=vimeo&logoColor=white)](https://vimeo.com/1250348776?share=copy&fl=sv&fe=ci)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Cost: $0.00](https://img.shields.io/badge/Direct%20Cost-$0.00%20(100%25%20Free)-success.svg)]()
 [![Aspect Ratios: 16:9 & 9:16](https://img.shields.io/badge/Formats-16%3A9%20%26%209%3A16-orange.svg)]()
